@@ -7,11 +7,11 @@ using UnityEngine;
 
 public class SudokuGenerator : MonoBehaviour
 {
-
     [SerializeField] private Transform squareHolder;
 
     private static SudokuGenerator _singleton;
     public static Sudoku Sudoku;
+
 
     private void Start()
     {
@@ -50,6 +50,7 @@ public class SudokuGenerator : MonoBehaviour
                 int y = i % Sudoku.BoardSize;
 
                 Sudoku[x, y] = (value, false);
+                square.Value = value;
             }
             i++;
         }
